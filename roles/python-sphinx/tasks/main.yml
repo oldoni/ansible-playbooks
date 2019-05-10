@@ -1,0 +1,28 @@
+---
+- name: Install dependencies required to deploy things with Python
+  sudo: yes
+  apt: pkg={{ item }} state=latest
+  tags: [packages]
+  with_items:
+    - build-essential
+    - libsqlite3-dev
+    - sqlite3 # for the command line client
+    - libxml2-dev
+    - bzip2
+    - libbz2-dev
+    - libssl-dev
+    - redis-server
+    - libffi-dev
+
+- name: Install packages required for Sphinx
+  sudo: yes
+  pip: name={{ item }}
+  with_items:
+    - sphinx==1.4.8
+    - recommonmark==0.4.0
+    - sphinx-autobuild==0.6.0
+    - nbsphinx==0.2.13
+    - sphinx_rtd_theme==0.2.4
+    - jupyter_sphinx_theme==0.0.6
+    - six==1.6.0
+    - contentful==1.2.0

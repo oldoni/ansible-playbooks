@@ -4,10 +4,9 @@
   sudo: yes
 
 - name: Install Bundler
-  # gem: name=bundler state=present
   command: gem install bundler
   sudo: yes 
 
 - name: Install github pages in project folder
-  shell: /usr/local/rvm/gems/ruby-2.0.0-p643/wrappers/bundle install chdir=/vagrant
+  shell: /usr/local/rvm/gems/ruby-2.0.0-p648/wrappers/bundle install chdir=/vagrant
   sudo: yes
